@@ -1,7 +1,7 @@
 import { Router } from "express";
 import {
   listMaterias,
-  getMaterias,
+  getMateria,
   createMateria,
   replaceMateria,
   updateMateria,
@@ -11,10 +11,11 @@ import {
 const router = Router();
 
 router.get("/", listMaterias);
-router.get("/:id", getMaterias);
+router.get("/:id", getMateria);
 router.post("/", createMateria);
 router.put("/:id", replaceMateria);
 router.patch("/:id", updateMateria);
 router.delete("/:id", deleteMateria);
-
+// Asegúrese de importar getTareasByMateria desde el controlador
+router.get("/:id/tareas", getTareasByMateria);
 export default router;
