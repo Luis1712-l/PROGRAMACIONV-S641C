@@ -6,6 +6,8 @@ import {
   replaceMateria,
   updateMateria,
   deleteMateria,
+  listTareasByMateria,
+  listEventosByMateria
 } from "../controllers/materias.controller.js";
 
 const router = Router();
@@ -16,6 +18,7 @@ router.post("/", createMateria);
 router.put("/:id", replaceMateria);
 router.patch("/:id", updateMateria);
 router.delete("/:id", deleteMateria);
-// Asegúrese de importar getTareasByMateria desde el controlador
-router.get("/:id/tareas", getTareasByMateria);
+router.get("/:id/tareas", listTareasByMateria);
+router.get("/:id/eventos", listEventosByMateria);
+
 export default router;
